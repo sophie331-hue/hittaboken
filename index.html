@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Book Finder&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">*{box-sizing:border-box;margin:0;padding:0}</p>
+<p class="p1">body{font-family:Segoe UI,sans-serif;background:#f5f0eb;min-height:100vh}</p>
+<p class="p1">#hdr{background:#2c1f0e;padding:28px 24px 20px;text-align:center}</p>
+<p class="p1">#hdr h1{color:#f5e6c8;font-size:1.5rem;margin:4px 0 2px}</p>
+<p class="p1">#hdr p{color:#c9a97a;font-size:.85rem}</p>
+<p class="p1">#bar{background:#3d2b12;padding:16px 24px;display:flex;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,.2)}</p>
+<p class="p1">#bar input{flex:1;padding:11px 16px;border-radius:8px;border:none;font-size:1rem;background:#f5f0eb;color:#2c1f0e;outline:none}</p>
+<p class="p1">#bar button{padding:11px 22px;border-radius:8px;border:none;background:#c9a97a;color:#2c1f0e;font-weight:700;font-size:1rem;cursor:pointer}</p>
+<p class="p1">#bar button:disabled{background:#a08060;cursor:not-allowed}</p>
+<p class="p1">#main{padding:20px;max-width:700px;margin:0 auto}</p>
+<p class="p1">.empty{text-align:center;margin-top:48px;color:#8a6a4a}</p>
+<p class="p1">.empty .ico{font-size:3rem;margin-bottom:12px}</p>
+<p class="p1">.lbl{color:#7a5230;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:16px 0 8px}</p>
+<p class="p1">.card{background:#fff;border-radius:12px;padding:16px 20px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:10px;border-left:5px solid #e0d8d0}</p>
+<p class="p1">.ch{display:flex;align-items:center;gap:12px}</p>
+<p class="p1">.ci{font-size:1.6rem}</p>
+<p class="p1">.cn{font-weight:700;color:#2c1f0e}</p>
+<p class="p1">.ct{color:#8a6a4a;font-size:.78rem}</p>
+<p class="p1">.found{border-radius:999px;padding:4px 13px;font-size:.8rem;font-weight:600;color:#fff;text-decoration:none}</p>
+<p class="p1">.notfound{border-radius:999px;padding:4px 13px;font-size:.8rem;background:#f0ece8;color:#aaa}</p>
+<p class="p1">.searching{font-size:.82rem;color:#bbb}</p>
+<p class="p1">.err{font-size:.82rem;color:#c00}</p>
+<p class="p1">.rlist{margin-top:12px}</p>
+<p class="p1">.ritem{display:block;padding:7px 11px;background:#f9f5f0;border-radius:7px;margin-bottom:6px;text-decoration:none}</p>
+<p class="p1">.rt{font-weight:600;font-size:.88rem;color:#2c1f0e}</p>
+<p class="p1">.rm{font-size:.76rem;color:#7a5230}</p>
+<p class="p1">.vall{display:block;text-align:right;font-size:.8rem;font-weight:600;text-decoration:none;margin-top:2px}</p>
+<p class="p1">.lcard{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:16px 20px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:10px;text-decoration:none}</p>
+<p class="p1">.larr{font-weight:600;font-size:.82rem}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="hdr"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="font-size:1.75rem"&gt;&amp;#128218;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Book Finder&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;e-Kirjasto &amp;middot; Helmet &amp;middot; Helle &amp;middot; Audible &amp;middot; BookBeat &amp;middot; Storytel&lt;/p&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input id="q" type="text" placeholder="Search by title or author..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="btn" onclick="go()"&gt;Search&lt;/button&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="main"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="empty"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ico"&gt;&amp;#128269;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Search across 6 platforms. Finnish libraries are checked live; streaming platforms open directly.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">var FINNA = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:"ekirjasto", name:"e-Kirjasto", icon:"&amp;#128215;", color:"#1a5f3f", type:"Free &amp;middot; Finnish national digital library",</p>
+<p class="p1"><span class="Apple-converted-space">   </span>filter:"filter%5B%5D=building%3A%220%2FNLF%2F%22&amp;filter%5B%5D=online_boolean%3A%221%22",</p>
+<p class="p1"><span class="Apple-converted-space">   </span>link:function(q){return "https://e-kirjasto.fi/en/search?query="+encodeURIComponent(q)}},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:"helmet", name:"Helmet", icon:"&amp;#128218;", color:"#b5451b", type:"Free &amp;middot; Helsinki metro area libraries",</p>
+<p class="p1"><span class="Apple-converted-space">   </span>filter:"filter%5B%5D=building%3A%220%2FHelmet%2F%22",</p>
+<p class="p1"><span class="Apple-converted-space">   </span>link:function(q){return "https://helmet.finna.fi/Search/Results?lookfor="+encodeURIComponent(q)+"&amp;type=AllFields"}},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:"helle", name:"Helle", icon:"&amp;#128217;", color:"#2255a4", type:"Free &amp;middot; P&amp;auml;ij&amp;auml;t-H&amp;auml;me region libraries",</p>
+<p class="p1"><span class="Apple-converted-space">   </span>filter:"filter%5B%5D=building%3A%220%2FHelle%2F%22",</p>
+<p class="p1"><span class="Apple-converted-space">   </span>link:function(q){return "https://helle.finna.fi/Search/Results?lookfor="+encodeURIComponent(q)+"&amp;type=AllFields"}}</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">var LINKS = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{name:"Audible",<span class="Apple-converted-space">  </span>icon:"&amp;#127911;", color:"#f29d12", type:"Purchase/subscription", link:function(q){return "https://www.audible.com/search?keywords="+encodeURIComponent(q)}},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{name:"BookBeat", icon:"&amp;#127897;", color:"#e63a4a", type:"Subscription",<span class="Apple-converted-space">          </span>link:function(q){return "https://www.bookbeat.com/search?query="+encodeURIComponent(q)}},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{name:"Storytel", icon:"&amp;#128214;", color:"#6b4fbb", type:"Subscription",<span class="Apple-converted-space">          </span>link:function(q){return "https://www.storytel.com/search?q="+encodeURIComponent(q)}}</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">var busy = false;</p>
+<p class="p2"><br></p>
+<p class="p1">function esc(s) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return String(s||"").replace(/&amp;/g,"&amp;amp;").replace(/&lt;/g,"&amp;lt;").replace(/&gt;/g,"&amp;gt;");</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function searchFinna(src, query, cb) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var url = "https://api.finna.fi/api/v1/search?lookfor="+encodeURIComponent(query)+"&amp;"+src.filter+"&amp;field%5B%5D=title&amp;field%5B%5D=authors&amp;field%5B%5D=year&amp;field%5B%5D=formats&amp;limit=3&amp;lng=en";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>fetch(url)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.then(function(d){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(d.status !== "OK") throw new Error("API error");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var recs = (d.records||[]).map(function(r){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var author = "";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(r.authors &amp;&amp; r.authors.primary) author = Object.keys(r.authors.primary)[0];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>else if(r.nonPresenterAuthors &amp;&amp; r.nonPresenterAuthors[0]) author = r.nonPresenterAuthors[0].name;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return {title:r.title||"", author:author, year:r.year||"", format:(r.formats&amp;&amp;r.formats[0]&amp;&amp;r.formats[0].translated)||""};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cb(null, recs);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>})</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.catch(function(e){ cb(e, null); });</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function renderCard(src, state, query) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var loading = state.loading, error = state.error, results = state.results;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var found = results &amp;&amp; results.length &gt; 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var border = (loading||!found) ? "#e0d8d0" : src.color;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>var badge = "";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(loading) badge = '&lt;span class="searching"&gt;Searching...&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else if(error) badge = '&lt;span class="err"&gt;Error&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else if(found) badge = '&lt;a href="'+src.link(query)+'" target="_blank" class="found" style="background:'+src.color+'"&gt;Found &amp;rarr;&lt;/a&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else badge = '&lt;span class="notfound"&gt;Not found&lt;/span&gt;';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>var rhtml = "";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(found) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rhtml = '&lt;div class="rlist"&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>for(var i=0;i&lt;results.length;i++) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var r = results[i];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var meta = [r.author, r.year, r.format].filter(Boolean).join(" &amp;middot; ");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>rhtml += '&lt;a href="'+src.link(query)+'" target="_blank" class="ritem"&gt;&lt;div class="rt"&gt;'+esc(r.title)+'&lt;/div&gt;'+(meta?'&lt;div class="rm"&gt;'+meta+'&lt;/div&gt;':'')+'&lt;/a&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rhtml += '&lt;a href="'+src.link(query)+'" target="_blank" class="vall" style="color:'+src.color+'"&gt;View all &amp;rarr;&lt;/a&gt;&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>return '&lt;div class="card" id="c-'+src.id+'" style="border-left-color:'+border+'"&gt;&lt;div class="ch"&gt;&lt;span class="ci"&gt;'+src.icon+'&lt;/span&gt;&lt;div style="flex:1"&gt;&lt;div class="cn"&gt;'+src.name+'&lt;/div&gt;&lt;div class="ct"&gt;'+src.type+'&lt;/div&gt;&lt;/div&gt;'+badge+'&lt;/div&gt;'+rhtml+'&lt;/div&gt;';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function updateCard(src, state, query) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var old = document.getElementById("c-"+src.id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(!old) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var tmp = document.createElement("div");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>tmp.innerHTML = renderCard(src, state, query);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>old.parentNode.replaceChild(tmp.firstChild, old);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function go() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var q = document.getElementById("q").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(!q || busy) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>busy = true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("btn").textContent = "Searching...";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("btn").disabled = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>var html = '&lt;p style="color:#5a3e28;margin-bottom:16px;font-size:.9rem"&gt;Results for &lt;strong&gt;'+esc(q)+'&lt;/strong&gt;:&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>html += '&lt;div class="lbl"&gt;&amp;#127467;&amp;#127470; Finnish Libraries &amp;mdash; live via Finna API&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for(var i=0;i&lt;FINNA.length;i++) html += renderCard(FINNA[i], {loading:true}, q);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>html += '&lt;div class="lbl"&gt;&amp;#127911; Streaming &amp;amp; Purchase&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for(var j=0;j&lt;LINKS.length;j++) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var s = LINKS[j];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html += '&lt;a href="'+s.link(q)+'" target="_blank" class="lcard" style="border-left:5px solid '+s.color+'"&gt;&lt;span class="ci"&gt;'+s.icon+'&lt;/span&gt;&lt;div style="flex:1"&gt;&lt;div class="cn"&gt;'+s.name+'&lt;/div&gt;&lt;div class="ct"&gt;'+s.type+'&lt;/div&gt;&lt;/div&gt;&lt;span class="larr" style="color:'+s.color+'"&gt;Search &amp;rarr;&lt;/span&gt;&lt;/a&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("main").innerHTML = html;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>var done = 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for(var k=0;k&lt;FINNA.length;k++) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>(function(src){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>searchFinna(src, q, function(err, results){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(err) updateCard(src, {loading:false, error:true, results:null}, q);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>else updateCard(src, {loading:false, error:null, results:results}, q);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>done++;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(done === FINNA.length) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>busy = false;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.getElementById("btn").textContent = "Search";</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.getElementById("btn").disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>})(FINNA[k]);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById("q").addEventListener("keydown", function(e){ if(e.key==="Enter") go(); });</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
